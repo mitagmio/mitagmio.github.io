@@ -1,0 +1,7 @@
+{
+    "url": "https://mitagmio.github.io/carat-tap-game/",                        // required
+    "name": "carat-tap-game",                      // required
+    "iconUrl": "https://mitagmio.github.io/carat-tap-game/static/android-chrome-96x96.png",               // required
+    "termsOfUseUrl": "https://mitagmio.github.io/carat-tap-game/static/android-chrome-96x96.png",     // optional
+    "privacyPolicyUrl": "https://mitagmio.github.io/carat-tap-game/static/android-chrome-96x96.png" // optional
+}
