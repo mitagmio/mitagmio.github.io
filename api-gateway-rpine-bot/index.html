@@ -139,16 +139,27 @@
             const tokenPayload = document.getElementById('token-payload').innerText;
             const tokenSignature = document.getElementById('token-signature').innerText;
             const token = `${tokenHeader}.${tokenPayload}.${tokenSignature}`;
-            
-            navigator.clipboard.writeText(token).then(() => {
+        
+            // Создаем временную текстовую область
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = token;
+            document.body.appendChild(tempTextArea);
+        
+            // Выделяем текст и копируем его
+            tempTextArea.select();
+            try {
+                document.execCommand('copy');
                 const message = document.getElementById('message');
                 message.classList.add('visible');
                 setTimeout(() => {
                     message.classList.remove('visible');
                 }, 2000);
-            }).catch(err => {
+            } catch (err) {
                 console.error('Ошибка при копировании токена: ', err);
-            });
+            }
+        
+            // Удаляем временную текстовую область
+            document.body.removeChild(tempTextArea);
         }
 
         window.onload = getTokenFromURL;
